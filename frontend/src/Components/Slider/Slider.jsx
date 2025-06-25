@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import { auth } from "../../Pages/Firebase/firebase.init";
 import RoommateCard from "../SliderCard/SliderCard";
 
@@ -36,62 +38,59 @@ const Slider = () => {
     }
   };
 
-  const chunkedRoommates = [];
-  for (let i = 0; i < roommates.length; i += 3) {
-    chunkedRoommates.push(roommates.slice(i, i + 3));
-  }
+  const responsive = {
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+      slidesToSlide: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 768 },
+      items: 2,
+      slidesToSlide: 2,
+    },
+    mobile: {
+      breakpoint: { max: 768, min: 0 },
+      items: 1,
+      slidesToSlide: 1,
+    },
+  };
 
   return (
-    <div className="mt-3.5">
-      <div className="mt-20">
-        <div className="flex flex-col items-center text-center">
-          <h2 className="text-3xl font-bold mb-2 text-primary">Find Your New Roommate</h2>
-          <p>Some amazing people are looking for a roommate like you!</p>
-        </div>
+    <div className="max-w-6xl mx-auto px-4 py-10 ">
+      <div className="flex flex-col items-center text-center mb-8">
+        <h2 className="text-3xl font-bold mb-2 text-primary">
+          Find Your New Roommate
+        </h2>
+        <p>Some amazing people are looking for a roommate like you!</p>
       </div>
 
-      <div className="flex justify-center mt-10">
-        <div className="carousel w-full max-w-6xl rounded-xl">
-          {chunkedRoommates.map((group, index) => (
-            <div
-              id={`slide${index + 1}`}
-              key={index}
-              className="carousel-item relative w-full"
-            >
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 px-4 py-6">
-                {group.map((roommate) => (
-                  <div
-                    key={roommate._id}
-                    onClick={() => handleSeeMore(roommate._id)}
-                    className="cursor-pointer"
-                  >
-                    <RoommateCard roommate={roommate} />
-                  </div>
-                ))}
-              </div>
-
-              <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                <a
-                  href={`#slide${
-                    ((index - 1 + chunkedRoommates.length) %
-                      chunkedRoommates.length) +
-                    1
-                  }`}
-                  className="btn btn-circle"
-                >
-                  ❮
-                </a>
-                <a
-                  href={`#slide${((index + 1) % chunkedRoommates.length) + 1}`}
-                  className="btn btn-circle"
-                >
-                  ❯
-                </a>
-              </div>
+      <Carousel
+        responsive={responsive}
+        infinite={true}
+        autoPlay={true}
+        autoPlaySpeed={4000}
+        keyBoardControl={true}
+        showDots={true}
+        removeArrowOnDeviceType={["tablet", "mobile"]}
+        partialVisible={false}      
+        centerMode={true}         
+        containerClass="carousel-container"
+        itemClass="px-12"
+      >
+        {roommates.map((roommate) => (
+          <div
+            key={roommate._id}
+            className="cursor-pointer  px-2" 
+            onClick={() => handleSeeMore(roommate._id)}
+          >
+            <div className="mx-3">
+              <RoommateCard roommate={roommate} />
             </div>
-          ))}
-        </div>
-      </div>
+            
+          </div>
+        ))}
+      </Carousel>
     </div>
   );
 };
