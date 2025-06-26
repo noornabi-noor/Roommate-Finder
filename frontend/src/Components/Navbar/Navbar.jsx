@@ -27,7 +27,72 @@ const Navbar = () => {
     }
   };
 
-  const menuItems = (
+  const menuItems = user ? (
+    <>
+      <li>
+        <NavLink
+          to="/dashboard"
+          className={({ isActive }) =>
+            isActive ? "font-bold text-primary underline" : ""
+          }
+        >
+          Dashboard
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? "font-bold text-primary underline" : ""
+          }
+        >
+          Home
+        </NavLink>
+      </li>
+
+      <li>
+        <NavLink
+          to="/browse-listing"
+          className={({ isActive }) =>
+            isActive ? "font-bold text-primary underline" : ""
+          }
+        >
+          Browse Listings
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/find-roommate"
+          className={({ isActive }) =>
+            isActive ? "font-bold text-primary underline" : ""
+          }
+        >
+          Find Roommate
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/my-listings"
+          className={({ isActive }) =>
+            isActive ? "font-bold text-primary underline" : ""
+          }
+        >
+          My Listings
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/my-profile"
+          className={({ isActive }) =>
+            isActive ? "font-bold text-primary underline" : ""
+          }
+        >
+          My Profile
+        </NavLink>
+      </li>
+    </>
+  ) : (
     <>
       <li>
         <NavLink
@@ -49,7 +114,6 @@ const Navbar = () => {
           Browse Listings
         </NavLink>
       </li>
-
       <li>
         <NavLink
           to="/find-roommate"
@@ -60,30 +124,6 @@ const Navbar = () => {
           Find Roommate
         </NavLink>
       </li>
-
-      <li>
-        <NavLink
-          to="/my-listings"
-          className={({ isActive }) =>
-            isActive ? "font-bold text-primary underline" : ""
-          }
-        >
-          My Listings
-        </NavLink>
-      </li>
-
-      {user && (
-        <li>
-          <NavLink
-            to="/my-profile"
-            className={({ isActive }) =>
-              isActive ? "font-bold text-primary underline" : ""
-            }
-          >
-            My Profile
-          </NavLink>
-        </li>
-      )}
     </>
   );
 

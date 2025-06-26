@@ -72,7 +72,7 @@ const BrowseListing = () => {
                 <td className="py-3 px-4 border text-center">
                     <a
                         onClick={() => handleSeeMore(roommate._id)}
-                        className="inline-block bg-primary text-white px-3 py-1 rounded text-xs sm:text-sm hover:bg-blue-700 whitespace-nowrap"
+                        className="inline-block bg-primary text-white px-3 py-1 rounded text-xs sm:text-sm hover:bg-blue-700 whitespace-nowrap transition cursor-pointer"
                     >
                     See More
                     </a>

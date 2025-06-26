@@ -10,6 +10,8 @@ import Register from "../pages/Register/Register";
 import Root from "../pages/Root/Root";
 import UpdateListing from "../pages/UpdateListing/UpdateListing";
 import ErrorPage from "./../pages/ErrorPage/ErrorPage";
+import DashboardLayout from "../Components/DashboardLayout";
+import DashboardOverview from "../pages/Dashboard/Overview";
 
 export const router = createBrowserRouter([
   {
@@ -59,6 +61,24 @@ export const router = createBrowserRouter([
       {
         path: "/roommate/:id",
         Component: RoommateDetails,
+      },
+      {
+        path: "/dashboard",
+        element: <DashboardLayout />,
+        children: [
+          { index: true, element: <DashboardOverview /> },
+          { path: "overview", element: <DashboardOverview /> },
+          {
+            path: "browse-listing",
+            loader: () =>
+              fetch(
+                "https://roommate-finder-server-rouge.vercel.app/roommates"
+              ),
+            element: <BrowseListing />,
+          },
+          { path: "my-profile", element: <MyProfile /> },
+          { path: "my-listings", element: <MyListings /> },
+        ],
       },
     ],
   },
