@@ -50,6 +50,69 @@ async function run() {
     });
 
 
+  //   app.get('/dashboard-overview', async (req, res) => {
+  //     const totalRoommates = await roommateCollection.estimatedDocumentCount();
+
+  //     const availableRoommates = await roommateCollection.countDocuments({
+  //       availability: 'Available',
+  //     });
+
+  //     const recentRoommates = await roommateCollection
+  //       .find()
+  //       .sort({ _id: -1 }) 
+  //       .limit(3)
+  //       .toArray();
+
+  //     const recentActivity = recentRoommates.map((roommate) => {
+  //       return `New roommate added: ${roommate.name || 'Unnamed'} in ${roommate.location || 'Unknown Location'}`;
+  //     });
+
+  //     res.send({
+  //       totalRoommates,
+  //       availableRoommates,
+  //       recentActivity,
+  //       accountStatus: 'Active', 
+  //     });
+  // });
+
+
+        // 🚀 Dashboard Overview API
+    app.get('/dashboard-overview', async (req, res) => {
+      const userEmail = req.query.email;
+
+      const totalRoommates = await roommateCollection.estimatedDocumentCount();
+
+      const availableRoommates = await roommateCollection.countDocuments({
+        availability: 'Available',
+      });
+
+      let myListingsCount = 0;
+      if (userEmail) {
+        myListingsCount = await roommateCollection.countDocuments({
+          email: { $regex: new RegExp(`^${userEmail}$`, 'i') },
+        });
+      }
+
+      const recentRoommates = await roommateCollection
+        .find()
+        .sort({ _id: -1 })
+        .limit(3)
+        .toArray();
+
+      const recentActivity = recentRoommates.map((roommate) => {
+        return `New roommate added: ${roommate.email || 'No Email Found'} in ${roommate.location || 'Unknown Location'}`;
+      });
+
+      res.send({
+        totalRoommates,
+        availableRoommates,
+        myListingsCount,
+        recentActivity,
+        accountStatus: 'Active',
+      });
+    });
+
+
     app.put('/roommates/:id', async (req,res)=>{
       const id= req.params.id;
       const filter = {_id: new ObjectId(id)};
