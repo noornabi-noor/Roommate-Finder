@@ -33,7 +33,7 @@ const Navbar = () => {
         <NavLink
           to="/"
           className={({ isActive }) =>
-            isActive ? "font-bold text-green-600 underline" : ""
+            isActive ? "font-bold text-primary underline" : ""
           }
         >
           Home
@@ -43,7 +43,7 @@ const Navbar = () => {
         <NavLink
           to="/browse-listing"
           className={({ isActive }) =>
-            isActive ? "font-bold text-green-600 underline" : ""
+            isActive ? "font-bold text-primary underline" : ""
           }
         >
           Browse Listings
@@ -54,7 +54,7 @@ const Navbar = () => {
         <NavLink
           to="/find-roommate"
           className={({ isActive }) =>
-            isActive ? "font-bold text-green-600 underline" : ""
+            isActive ? "font-bold text-primary underline" : ""
           }
         >
           Find Roommate
@@ -65,7 +65,7 @@ const Navbar = () => {
         <NavLink
           to="/my-listings"
           className={({ isActive }) =>
-            isActive ? "font-bold text-green-600 underline" : ""
+            isActive ? "font-bold text-primary underline" : ""
           }
         >
           My Listings
@@ -77,7 +77,7 @@ const Navbar = () => {
           <NavLink
             to="/my-profile"
             className={({ isActive }) =>
-              isActive ? "font-bold text-green-600 underline" : ""
+              isActive ? "font-bold text-primary underline" : ""
             }
           >
             My Profile
@@ -88,7 +88,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-200 px-4 shadow-md gap-3">
+    <div className="navbar bg-base-200 px-4 shadow-md gap-3 text-gray-500 font-bold">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -237,7 +237,7 @@ const Navbar = () => {
           <NavLink
             to="/login"
             className={({ isActive }) =>
-              isActive ? "font-bold text-green-600 underline" : ""
+              isActive ? "font-bold text-primary underline" : ""
             }
           >
             <h4 className="text-sm sm:text-base font-semibold">Login</h4>

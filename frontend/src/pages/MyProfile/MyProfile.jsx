@@ -54,8 +54,8 @@ const MyProfile = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
-      <div className="bg-gray-300 shadow-lg rounded-xl p-6 max-w-md w-full text-center">
-        <h2 className="text-2xl font-bold text-[#00bf63] mb-4">My Profile</h2>
+      <div className="bg-base-200 shadow-lg rounded-xl p-6 max-w-md w-full text-center">
+        <h2 className="text-2xl font-bold text-primary mb-4">My Profile</h2>
 
         {user ? (
           <>

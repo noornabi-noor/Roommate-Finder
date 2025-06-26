@@ -71,7 +71,7 @@ const RoommateDetails = () => {
         className="w-full object-cover rounded-lg"
       />
 
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center text-primary">
         <h2 className="text-2xl font-bold mt-4">{roommate.userName}</h2>
         <p className="text-xl font-semibold text-black mt-4">
           {likeCount} people interested in
@@ -79,12 +79,12 @@ const RoommateDetails = () => {
       </div>
 
       <p className="text-gray-600">{roommate.location}</p>
-      <p className="mt-2">{roommate.description}</p>
-      <p className="mt-1 font-semibold">Lifestyle: {roommate.lifestyle}</p>
-      <p className="mt-1 font-semibold">Rent: {roommate.rent} per month</p>
-      <p className="mt-1 font-semibold">Age: {roommate.age}</p>
-      <p className="mt-1 font-semibold">Gender: {roommate.gender}</p>
-      <p className="mt-1 font-semibold">
+      <p className="mt-2 text-black">{roommate.description}</p>
+      <p className="mt-1 font-semibold text-black">Lifestyle: {roommate.lifestyle}</p>
+      <p className="mt-1 font-semibold text-black">Rent: {roommate.rent} per month</p>
+      <p className="mt-1 font-semibold text-black">Age: {roommate.age}</p>
+      <p className="mt-1 font-semibold text-black">Gender: {roommate.gender}</p>
+      <p className="mt-1 font-semibold text-black">
         Availability: {roommate.availability}
       </p>
 

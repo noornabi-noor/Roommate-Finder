@@ -32,7 +32,7 @@ const FeaturedRoommates = () => {
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {roommates.map((roommate) => (
-          <div key={roommate._id} className="card bg-base-100 shadow-md">
+          <div key={roommate._id} className="card bg-base-200 shadow-md">
             <figure className="px-6 pt-6">
               <img
                 src={roommate.photoURL}
@@ -41,7 +41,7 @@ const FeaturedRoommates = () => {
               />
             </figure>
             <div className="card-body text-center items-center">
-              <h2 className="card-title">{roommate.userName}</h2>
+              <h2 className="card-title text-primary">{roommate.userName}</h2>
               <p className="text-gray-500">{roommate.location}</p>
               <p>
                 {roommate.description?.length > 80
@@ -50,7 +50,7 @@ const FeaturedRoommates = () => {
               </p>
               <div className="card-actions justify-center mt-4">
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-primary hover:bg-blue-700"
                   onClick={() => handleSeeMore(roommate._id)}
                 >
                   See More

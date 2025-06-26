@@ -31,11 +31,11 @@ const Card = () => {
       {cardData.map((card, index) => (
         <Slide key={index} direction="up" cascade damping={0.2}>
           <div
-            className="flex flex-col gap-4 bg-white p-8 items-center text-center rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full"
+            className="flex flex-col gap-4 bg-base-200 p-8 items-center text-center rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 h-full"
           >
-            <img className="w-16 h-16 object-contain" src={card.image} alt={card.title} />
+            <img className="w-16 h-16 object-contain " src={card.image} alt={card.title} />
             <h2 className="font-bold text-xl text-primary">{card.title}</h2>
-            <p className="text-gray-600 text-sm flex-grow">{card.description}</p>
+            <p className="text-gray-500 text-sm flex-grow">{card.description}</p>
           </div>
         </Slide>
       ))}

@@ -77,7 +77,7 @@ const AddRoommate = () => {
 
       <form
         onSubmit={handleAddRoommate}
-        className="bg-gray-400 shadow-md rounded-lg p-6 space-y-6"
+        className="bg-base-200 shadow-md rounded-lg p-6 space-y-6"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Title */}
@@ -237,7 +237,7 @@ const AddRoommate = () => {
         <div className="text-center pt-4">
           <button
             type="submit"
-            className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-all"
+            className="bg-primary text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-all"
           >
             Add Listing
           </button>

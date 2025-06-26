@@ -25,7 +25,7 @@ const BrowseListing = () => {
     };
 
   return (
-    <div className="mt-8 px-4">
+    <div className="mt-8 px-4 ">
      
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:hidden">
         {roommates.map(roommate => (
@@ -72,7 +72,7 @@ const BrowseListing = () => {
                 <td className="py-3 px-4 border text-center">
                     <a
                         onClick={() => handleSeeMore(roommate._id)}
-                        className="inline-block bg-blue-600 text-white px-3 py-1 rounded text-xs sm:text-sm hover:bg-blue-700 whitespace-nowrap"
+                        className="inline-block bg-primary text-white px-3 py-1 rounded text-xs sm:text-sm hover:bg-blue-700 whitespace-nowrap"
                     >
                     See More
                     </a>

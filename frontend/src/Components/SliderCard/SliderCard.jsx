@@ -4,7 +4,7 @@ const SliderCard = ({ roommate }) => {
   const { photoURL, userName, location } = roommate;
 
   return (
-    <div className="card w-80 h-[340px] shadow-md flex flex-col items-center justify-start">
+    <div className="card w-80 h-[340px] shadow-md flex flex-col items-center justify-start bg-base-200">
       <figure className="pt-6">
         <img
           src={photoURL}
@@ -13,7 +13,7 @@ const SliderCard = ({ roommate }) => {
         />
       </figure>
       <div className="card-body items-center text-center p-4">
-        <h2 className="card-title text-lg">{userName}</h2>
+        <h2 className="card-title text-lg text-primary">{userName}</h2>
         <p className="text-gray-500 text-sm">{location}</p>
       </div>
     </div>

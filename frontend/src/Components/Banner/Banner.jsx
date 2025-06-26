@@ -12,7 +12,7 @@ const Banner = () => {
             ></div>
 
             <div className="relative z-10 flex flex-col items-center h-full px-4 sm:px-2 py-10 justify-center text-center">
-                <div className="space-y-3 w-full sm:w-3/4 md:w-1/2 lg:max-w-md text-blue-400">
+                <div className="space-y-3 w-full sm:w-3/4 md:w-1/2 lg:max-w-md text-primary">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight">
                         <Typewriter
                             words={['Find roommates that match your lifestyle.']}
@@ -25,7 +25,7 @@ const Banner = () => {
                         />
                     </h2>
 
-                    <button className="px-4 py-2 rounded-lg bg-black text-white mt-2 text-base">
+                    <button className="px-4 py-2 rounded-lg bg-gray-500 text-white mt-2 text-base">
                         Join Now
                     </button>
 

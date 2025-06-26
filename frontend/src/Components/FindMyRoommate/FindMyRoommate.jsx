@@ -5,10 +5,10 @@ import community from '../../assets/communitycoliving.svg';
 const FindMyRoommate = () => {
   return (
     <div>
-      <div className='p-12 mt-5 rounded-2xl bg-white shadow-md text-center'>
+      <div className='p-12 mt-5 rounded-2xl bg-base-200 shadow-md text-center'>
         <h1 className='text-3xl font-bold text-primary '>Finding a great roommate should be hassle free.</h1>
       </div>
-      <div className="flex flex-col md:flex-row justify-between mt-5 p-6 md:p-10 rounded-2xl bg-white shadow-md items-center">
+      <div className="flex flex-col md:flex-row justify-between mt-5 p-6 md:p-10 rounded-2xl bg-base-200 shadow-md items-center">
         <div className="flex flex-col justify-center text-center md:text-left max-w-xl">
           <h1 className="font-bold text-2xl md:text-3xl text-primary">
             List your roommate with FindMyRoommate
@@ -18,7 +18,7 @@ const FindMyRoommate = () => {
           </p>
           <div className="mt-4">
             <Link to="/find-roommate">
-              <button className="btn btn-primary">List Your Space</button>
+              <button className="btn btn-primary hover:bg-blue-700">List Your Space</button>
             </Link>
           </div>
         </div>

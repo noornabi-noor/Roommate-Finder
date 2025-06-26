@@ -77,14 +77,14 @@ const MyListings = () => {
     );
   if (listings.length === 0)
     return (
-      <p className="text-center p-60 rounded-2xl text-4xl text-primary font-bold bg-gray-200 mt-10 mb-10">
+      <p className="text-center p-60 rounded-2xl text-4xl text-primary font-bold bg-base-200 mt-10 mb-10">
         You haven't added any listings yet.
       </p>
     );
 
   return (
-    <div className="max-w-6xl mx-auto p-10 mt-10">
-      <h2 className="text-3xl font-bold text-center mb-8">
+    <div className="max-w-6xl mx-auto p-10 mt-10 py-16">
+      <h2 className="text-3xl text-primary font-bold text-center mb-8">
         My Roommate Listings
       </h2>
 
@@ -92,7 +92,7 @@ const MyListings = () => {
       <div className="hidden md:block overflow-x-auto">
         <table className="min-w-full border">
           <thead>
-            <tr className="bg-gray-400 text-left">
+            <tr className="bg-base-200 text-left">
               <th className="py-3 px-4 border">Title</th>
               <th className="py-3 px-4 border">Location</th>
               <th className="py-3 px-4 border">Rent</th>
@@ -109,14 +109,14 @@ const MyListings = () => {
                 <td className="py-2 px-4 border">{listing.roomType}</td>
                 <td className="py-2 px-4 border space-x-2">
                   <Link to={`/update-listing/${listing._id}`}>
-                    <button className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">
+                    <button className="bg-primary hover:bg-blue-700 text-white px-3 py-1 rounded">
                       Update
                     </button>
                   </Link>
 
                   <button
                     onClick={() => handleDelete(listing._id)}
-                    className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
+                    className="bg-primary hover:bg-blue-700 text-white px-3 py-1 rounded"
                   >
                     Delete
                   </button>
@@ -143,14 +143,14 @@ const MyListings = () => {
             </p>
             <div className="mt-4 space-x-2">
               <Link to={`/update-listing/${listing._id}`}>
-                <button className="bg-blue-500 hover:bg-blue-600 text-white px-3 py-1 rounded">
+                <button className="bg-primary hover:bg-blue-700 text-white px-3 py-1 rounded">
                   Update
                 </button>
               </Link>
 
               <button
                 onClick={() => handleDelete(listing._id)}
-                className="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded"
+                className="bg-primary hover:bg-blue-700 text-white px-3 py-1 rounded"
               >
                 Delete
               </button>
