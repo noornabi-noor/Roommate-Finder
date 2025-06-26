@@ -1,6 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
+
+const jwt  = require('jsonwebtoken');
+
 const { MongoClient, ServerApiVersion,ObjectId } = require('mongodb');
 
 
@@ -48,33 +51,6 @@ async function run() {
         .toArray();
       res.send(result);
     });
-
-
-  //   app.get('/dashboard-overview', async (req, res) => {
-  //     const totalRoommates = await roommateCollection.estimatedDocumentCount();
-
-  //     const availableRoommates = await roommateCollection.countDocuments({
-  //       availability: 'Available',
-  //     });
-
-  //     const recentRoommates = await roommateCollection
-  //       .find()
-  //       .sort({ _id: -1 }) 
-  //       .limit(3)
-  //       .toArray();
-
-  //     const recentActivity = recentRoommates.map((roommate) => {
-  //       return `New roommate added: ${roommate.name || 'Unnamed'} in ${roommate.location || 'Unknown Location'}`;
-  //     });
-
-  //     res.send({
-  //       totalRoommates,
-  //       availableRoommates,
-  //       recentActivity,
-  //       accountStatus: 'Active', 
-  //     });
-  // });
-
 
         // 🚀 Dashboard Overview API
     app.get('/dashboard-overview', async (req, res) => {
