@@ -12,6 +12,9 @@ import UpdateListing from "../pages/UpdateListing/UpdateListing";
 import ErrorPage from "./../pages/ErrorPage/ErrorPage";
 import DashboardLayout from "../Components/DashboardLayout";
 import DashboardOverview from "../pages/Dashboard/Overview";
+import TermsOfService from "../Components/TermsOfServices/TermsOfService";
+import PrivacyPolicy from "../Components/TermsOfServices/PrivacyPolicy";
+import RefundPolicy from "../Components/TermsOfServices/RefundPolicy";
 
 export const router = createBrowserRouter([
   {
@@ -61,6 +64,18 @@ export const router = createBrowserRouter([
       {
         path: "/roommate/:id",
         Component: RoommateDetails,
+      },
+      {
+        path: "/terms" ,
+        Component: TermsOfService 
+      },
+      {
+        path: "/privacy" ,
+        Component: PrivacyPolicy 
+      },
+      {
+        path: "/refund" ,
+        Component: RefundPolicy 
       },
       {
         path: "/dashboard",

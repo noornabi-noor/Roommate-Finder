@@ -14,7 +14,7 @@ const Overview = () => {
 
     const fetchDashboardOverview = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/dashboard-overview", {
+        const res = await axios.get("https://roommate-finder-server-rouge.vercel.app/dashboard-overview", {
           params: { email: user?.email }, // Optional: per-user filtering
         });
         setData(res.data);
